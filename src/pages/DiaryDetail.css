@@ -1,0 +1,64 @@
+.DiaryDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.DiaryDetailTitle {
+  font-size: 24px;
+  font-weight: 600;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.DiaryDetailEmotion {
+  font-size: 50px;
+  margin-top: 40px;
+}
+
+.DiaryDetailInputs {
+  width: 100%;
+  height: auto;
+  gap: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.DiaryTitle {
+  width: 320px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #14142f;
+  display: flex;
+  align-items: center;
+
+  border: 0 none;
+  outline: 0 none;
+  padding: 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white; 
+}
+
+.DiaryContents {
+  width: 320px;
+  height: 280px;
+  border-radius: 10px;
+  background-color: #14142f;
+
+  outline: 0 none;
+  padding: 16px 14px;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: white; 
+  resize: none;
+  border: none;
+}

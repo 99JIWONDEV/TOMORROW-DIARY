@@ -1,10 +1,21 @@
+import CustomCalendar from "../components/CustomCalendar"
 import BackHeader from "../components/BackHeader";
+import WriteTitleInput from "../components/WriteTitleInput";
+import WriteContentsInput from "../components/WriteContentsInput";
+import "./Write.css";
+import Button from "../components/Button";
 
 const Write = () => {
   return (
-    <div>
+    <div className="Write">
       <BackHeader />
-      <div className="ChooseTitle">내일의 감정은 어떨 것 같나요?</div>
+      <div className="WriteTitle">내일의 일기를 작성해주세요</div>
+      <div className="WriteInputs">
+        <CustomCalendar />
+        <WriteTitleInput />
+        <WriteContentsInput />
+      </div>
+      <Button text="작성 완료" site="loading" />
     </div>
   )
 }

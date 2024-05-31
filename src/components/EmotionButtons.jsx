@@ -1,20 +1,20 @@
 import EmotionButton from "./EmotionButton";
 import "./EmotionButtons.css";
 
-const EmotionButtons = () => {
+const EmotionButtons = ({site}) => {
   return (
     <div className="EmotionButtons">
       <div className="EmotionButtonsRow">
-        <EmotionButton emotion="😃" />
-        <EmotionButton emotion="😒" />
+        <EmotionButton emotion="😃" site={site} />
+        <EmotionButton emotion="😒" site={site} />
       </div>
       <div className="EmotionButtonsRow">
-        <EmotionButton emotion="🥺" />
-        <EmotionButton emotion="😖" />
+        <EmotionButton emotion="🥺" site={site}/>
+        <EmotionButton emotion="😖" site={site}/>
       </div>
       <div className="EmotionButtonsRow">
-        <EmotionButton emotion="😥" />
-        <EmotionButton emotion="😡" />
+        <EmotionButton emotion="😥" site={site}/>
+        <EmotionButton emotion="😡" site={site}/>
       </div>
     </div>
   );

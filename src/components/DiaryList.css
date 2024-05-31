@@ -1,0 +1,29 @@
+.DiaryList {
+  width: 340px;
+  height: 120px;
+  background-color: #14142F;
+  color: white;
+  border-radius: 16px;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.DiaryListDate {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.DiaryListTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.DiaryListContents {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 8px;
+}

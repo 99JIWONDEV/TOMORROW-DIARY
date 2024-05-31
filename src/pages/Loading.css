@@ -1,0 +1,44 @@
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.Loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    gap: 40px;
+}
+
+.LoadingDate,
+.LoadingDesc {
+  animation: fadeInOut 5s infinite;
+}
+
+.LoadingDate {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.LoadingDesc {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.Loading span {
+  color: #EAB411;
+}

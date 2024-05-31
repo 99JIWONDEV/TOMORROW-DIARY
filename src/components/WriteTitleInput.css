@@ -1,0 +1,19 @@
+.WriteTitleInput {
+  width: 320px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #14142f;
+}
+
+
+.WriteTitleInput input {
+  width: inherit;
+  height: inherit;
+  background: transparent;
+  border: 0 none;
+  outline: 0 none;
+  padding: 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white; 
+}

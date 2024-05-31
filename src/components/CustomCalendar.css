@@ -1,0 +1,38 @@
+.CustomCalendar {
+  position: relative;
+  width: 320px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #14142f;
+
+}
+
+.CustomCalendarInput {
+  
+  width: inherit;
+  height: inherit;
+  background: transparent;
+  border: 0 none;
+  outline: 0 none;
+  padding: 0 10px;
+  position: relative;
+  z-index: 3;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  appearance: none;
+  cursor: pointer;
+}
+
+.CustomCalendarIcon {
+  position: absolute; 
+  top: 0; 
+  right: 0; 
+  z-index: 1; 
+  width: 35px; 
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
