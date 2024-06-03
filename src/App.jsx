@@ -9,16 +9,23 @@ import MyDiary from './pages/MyDiary'
 import DiaryDetail from './pages/DiaryDetail'
 import EditEmotion from './pages/EditEmotion'
 import EditDiary from './pages/EditDiary'
+import Login from './pages/Login'
+import BeforeLogin from './pages/BeforeLogin'
+import Register from './pages/Register'
 
 function App() {
   // GET 요청
-  axios.get("/diarys/detail?date=2024-05-13&userId=1").then(function(response){
-    console.log(response.data.response.body.title)
-  })
+  // axios.get("/diarys/detail?date=2024-05-13&userId=1").then(function(response){
+  //   console.log(response.data.response.body.title)
+  // })
+  
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<BeforeLogin />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/choose" element={<Choose />} />
         <Route path="/editEmotion/:id" element={<EditEmotion />} />
         <Route path="/write" element={<Write />} />

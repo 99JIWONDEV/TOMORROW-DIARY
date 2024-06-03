@@ -7,12 +7,24 @@ const CustomCalendar = () => {
   const tomorrow = new Date(today.setDate(today.getDate() + 1));
   const tomorrowDate = `${tomorrow.getFullYear()}년 ${tomorrow.getMonth() + 1}월 ${tomorrow.getDate()}일`;
 
-
+  const onChange = (e) => {
+    if(e.target.value.split("년")[1].split("월")[0].replaceAll(" ","")<10){
+      sessionStorage.setItem("month", `0${e.target.value.split("년")[1].split("월")[0].replaceAll(" ","")}`);
+    }else{
+      sessionStorage.setItem("month", e.target.value.split("년")[1].split("월")[0].replaceAll(" ",""));
+    }
+    if(e.target.value.split("년")[1].split("월")[1].split("일")[0].replaceAll(" ","")<10){
+      sessionStorage.setItem("day", `0${e.target.value.split("년")[1].split("월")[1].split("일")[0].replaceAll(" ","")}`);
+    }else{
+      sessionStorage.setItem("day", e.target.value.split("년")[1].split("월")[1].split("일")[0].replaceAll(" ",""));
+    }
+    sessionStorage.setItem("year", e.target.value.split("년")[0].replaceAll(" ",""));
+  }
 
 
   return (
     <div className="CustomCalendar">
-      <select name="date" className="CustomCalendarInput" >
+      <select name="date" className="CustomCalendarInput" onChange={onChange} >
         <option value={todayDate}>{todayDate}</option>
         <option value={tomorrowDate}>{tomorrowDate}</option>
       </select>

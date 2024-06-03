@@ -9,6 +9,11 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
+      '/users': {
+        target: 'http://54.180.211.41',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/users/, '/users')
+      },
       '/diarys': {
         target: 'http://54.180.211.41',
         changeOrigin: true,
