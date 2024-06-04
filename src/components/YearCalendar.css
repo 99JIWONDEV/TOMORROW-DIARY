@@ -4,11 +4,9 @@
   height: 40px;
   border-radius: 10px;
   background-color: #14142f;
-
 }
 
 .YearCalendarInput {
-  
   width: inherit;
   height: inherit;
   background: transparent;
@@ -25,11 +23,11 @@
 }
 
 .YearCalendarIcon {
-  position: absolute; 
-  top: 0; 
-  right: 0; 
-  z-index: 1; 
-  width: 35px; 
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 35px;
   height: inherit;
   display: flex;
   justify-content: center;

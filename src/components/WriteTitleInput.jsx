@@ -14,7 +14,6 @@ const WriteTitleInput = ({ title, setIsTitle }) => {
     }
   };
 
-
   return (
     <div className="WriteTitleInput">
       <input defaultValue={title} type="text" placeholder="제목을 입력해주세요" className="Input" onChange={onChange} />

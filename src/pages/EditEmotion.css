@@ -7,19 +7,19 @@
 }
 
 .ChooseTitle {
-font-size: 24px;
-font-weight: 600;
-width: 100%;
-display: flex;
-justify-content: center;
-margin-top: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .ChooseBtn {
-width: 100%;
-height: 100%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

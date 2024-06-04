@@ -22,7 +22,7 @@
 .MyDiaryDesc {
   font-size: 14px;
   font-weight: 500;
-  color: #CFCFCF;
+  color: #cfcfcf;
   text-decoration: underline;
 }
 
@@ -43,4 +43,3 @@
   align-items: center;
   gap: 20px;
 }
-

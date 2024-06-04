@@ -14,18 +14,18 @@
 }
 
 .Loading {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    gap: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  gap: 40px;
 }
 
 .LoadingDate,
 .LoadingDesc {
-  animation: fadeInOut 5s infinite;
+  animation: fadeInOut 4s infinite;
 }
 
 .LoadingDate {
@@ -40,5 +40,5 @@
 }
 
 .Loading span {
-  color: #EAB411;
+  color: #eab411;
 }

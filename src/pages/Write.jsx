@@ -10,15 +10,22 @@ import { ContentsAtom } from "../recoil/ContentsAtom";
 import { IsTitleAtom } from "../recoil/IsTitleAtom";
 import { IsContentsAtom } from "../recoil/IsContentsAtom";
 import { useRecoilState } from "recoil";
-
-
+import { useState } from "react";
+import dayjs from "dayjs";
+import { useEffect } from "react";
+import axios from "axios";
 
 const Write = () => {
   const title = useRecoilValue(TitleAtom);
   const contents = useRecoilValue(ContentsAtom);
+  const userId = sessionStorage.getItem("userId");
+  const today = dayjs().format("YYYY-MM-DD");
+  const tomorrow = dayjs().add(1, "day").format("YYYY-MM-DD");
   const navigate = useNavigate();
   const [isTitle, setIsTitle] = useRecoilState(IsTitleAtom);
   const [isContents, setIsContents] = useRecoilState(IsContentsAtom);
+  const [isToday, setIsToday] = useState(false);
+  const [isTomorrow, setIsTomorrow] = useState(false);
   const onClick = async (e) => {
     e.preventDefault();
     try {
@@ -47,13 +54,13 @@ const Write = () => {
       console.error("오류 발생:", error);
     }
   };
-  
+
   return (
     <div className="Write">
       <BackHeader />
       <div className="WriteTitle">내일의 일기를 작성해주세요</div>
       <div className="WriteInputs">
-        <CustomCalendar/>
+        <CustomCalendar />
         <WriteTitleInput setIsTitle={setIsTitle} />
         <WriteContentsInput setIsContents={setIsContents} />
       </div>

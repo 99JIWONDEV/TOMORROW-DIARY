@@ -14,7 +14,6 @@ import { ContentsAtom } from "../recoil/ContentsAtom";
 import { useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
 
-
 const EditDiary = () => {
   const navigate = useNavigate();
   const param = useParams();
@@ -34,8 +33,6 @@ const EditDiary = () => {
   const inputContents = useRecoilValue(ContentsAtom);
   const setInputContents = useSetRecoilState(ContentsAtom);
 
-  console.log(isTitle, isContents);
-
   useEffect(() => {
     if (emotionIcon === "SMILE") {
       setEmotionIcon("😃");
@@ -51,11 +48,9 @@ const EditDiary = () => {
       setEmotionIcon("🫢");
     }
   }, [emotionIcon]);
-  
 
   const onClick = async (e) => {
     e.preventDefault();
-    console.log(`${sessionStorage.getItem("year")}-${sessionStorage.getItem("month").replaceAll(" ", "")}-${sessionStorage.getItem("day").replaceAll(" ", "")}`);
     try {
       const response = await fetch("/diarys/modify", {
         method: "POST",
@@ -104,11 +99,6 @@ const EditDiary = () => {
     getDiaryList();
   }, [userId, date]);
 
-  console.log(inputTitle, inputContents);
-
-
-
-
   sessionStorage.setItem("year", param.id.split("-")[0]);
   sessionStorage.setItem("month", param.id.split("-")[1]);
   sessionStorage.setItem("day", param.id.split("-")[2]);
@@ -120,8 +110,8 @@ const EditDiary = () => {
       </div>
       <div className="EditEmotion">{emotionIcon}</div>
       <div className="EditInputs">
-        <WriteTitleInput title={diaryContents?.title} setIsTitle={setIsTitle}  />
-        <WriteContentsInput contents={diaryContents?.content} setIsContents={setIsContents}/>
+        <WriteTitleInput title={diaryContents?.title} setIsTitle={setIsTitle} />
+        <WriteContentsInput contents={diaryContents?.content} setIsContents={setIsContents} />
       </div>
       {isTitle && isContents ? <button onClick={onClick}>작성완료</button> : <button style={{ backgroundColor: "#AEAEAE", cursor: "default" }}>작성완료</button>}
     </div>

@@ -1,15 +1,12 @@
 import React, { useContext } from "react";
 import "./CustomCalendar.css";
-import { IsTodayAtom } from "../recoil/IsTodayAtom";
-import { useRecoilValue } from "recoil";
-import { IsTomorrowAtom } from "../recoil/IsTomorrowAtom";
+import { useState } from "react";
 
 const CustomCalendar = () => {
   const today = new Date();
   const todayDate = `${today.getFullYear()}년 ${today.getMonth() + 1}월 ${today.getDate()}일`;
   const tomorrow = new Date(today.setDate(today.getDate() + 1));
   const tomorrowDate = `${tomorrow.getFullYear()}년 ${tomorrow.getMonth() + 1}월 ${tomorrow.getDate()}일`;
-
 
   const onChange = (e) => {
     if (e.target.value.split("년")[1].split("월")[0].replaceAll(" ", "") < 10) {

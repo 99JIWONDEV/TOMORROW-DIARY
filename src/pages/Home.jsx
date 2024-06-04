@@ -10,7 +10,6 @@ const Home = () => {
     navigate("/");
   };
 
-
   return (
     <div className="Home">
       <img className="HomeLogout" src="../../public/logoutIcon.svg" onClick={Logout} />

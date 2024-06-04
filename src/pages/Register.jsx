@@ -52,10 +52,6 @@ const Register = () => {
     }
   }, [id]);
 
-  console.log("비밀번호", passwordCheck);
-  console.log("닉네임", isNickname);
-  console.log("아이디", isId);
-
   const handleSignup = async (event) => {
     event.preventDefault();
     setIsLoading(true);

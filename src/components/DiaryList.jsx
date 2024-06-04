@@ -4,13 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 const DiaryList = ({ id, date, title, emotion, contents }) => {
-  const [emotionIcon, setEmotionIcon] = useState(""); 
+  const [emotionIcon, setEmotionIcon] = useState("");
   const navigate = useNavigate();
   const gotoSite = () => {
     navigate(`/myDiary/${date}`);
   };
   useEffect(() => {
-    if(emotion === "SMILE") {
+    if (emotion === "SMILE") {
       setEmotionIcon("😃");
     } else if (emotion === "SO_SO") {
       setEmotionIcon("😢");
@@ -24,7 +24,6 @@ const DiaryList = ({ id, date, title, emotion, contents }) => {
       setEmotionIcon("🫢");
     }
   }, [emotion]);
-
 
   return (
     <div className="DiaryList" onClick={gotoSite}>

@@ -1,7 +1,7 @@
 .EmotionButton {
   width: 130px;
   height: 130px;
-  background-color: #14142F;
+  background-color: #14142f;
   border: 1px solid black;
   border-radius: 21px;
 
@@ -12,7 +12,7 @@
 }
 
 .EmotionButton button {
-  background-color: #14142F;
+  background-color: #14142f;
   border: none;
   width: 100%;
   height: 100%;
@@ -27,9 +27,9 @@
 .EmotionButton button div {
   font-size: 16px;
   font-weight: 600;
-color: white;
+  color: white;
 }
 
 .EmotionButton button:hover {
-  background-color: #1E1D3A;
+  background-color: #1e1d3a;
 }

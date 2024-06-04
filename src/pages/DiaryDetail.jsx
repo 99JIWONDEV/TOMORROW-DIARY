@@ -6,7 +6,6 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 
-
 const DiaryDetail = () => {
   const param = useParams();
   const userId = sessionStorage.getItem("userId");
@@ -30,11 +29,10 @@ const DiaryDetail = () => {
     getDiaryList();
   }, [userId, date]);
 
-  console.log(diaryContents);
   const emotion = diaryContents?.emotion;
   const [emotionIcon, setEmotionIcon] = useState("");
   useEffect(() => {
-    if(emotion === "SMILE") {
+    if (emotion === "SMILE") {
       setEmotionIcon("😃");
     } else if (emotion === "SO_SO") {
       setEmotionIcon("😢");
@@ -52,7 +50,9 @@ const DiaryDetail = () => {
   return (
     <div className="DiaryDetail">
       <BackHeader />
-      <div className="DiaryDetailTitle">{param.id.split("-")[0]}년 {param.id.split("-")[1]}월 {param.id.split("-")[2]}일 일기</div>
+      <div className="DiaryDetailTitle">
+        {param.id.split("-")[0]}년 {param.id.split("-")[1]}월 {param.id.split("-")[2]}일 일기
+      </div>
       <div className="DiaryDetailEmotion">{emotionIcon}</div>
       <div className="DiaryDetailInputs">
         <div className="DiaryTitle">{diaryContents?.title}</div>

@@ -12,25 +12,23 @@ const MyDiary = () => {
   const [list, setList] = useState([]);
   const userId = sessionStorage.getItem("userId");
   const date = `${sessionStorage.getItem("year")}-${month}-${sessionStorage.getItem("day")}`;
-  console.log(userId);
-  console.log(date);
   useEffect(() => {
     const getDiaryList = async () => {
       try {
-        const response = await axios.get("/diarys/calendar",{
+        const response = await axios.get("/diarys/calendar", {
           params: {
             userId: userId,
-            date: date
-          }
-        })
+            date: date,
+          },
+        });
         setList(response.data.response.body.reverse());
-      }catch(error){
+      } catch (error) {
         console.error(error);
       }
-    }
+    };
     getDiaryList();
-  },[month])
-  console.log(list);  
+  }, [month]);
+
   return (
     <div className="MyDiary">
       <HomeHeader />
@@ -49,6 +47,6 @@ const MyDiary = () => {
       </div>
     </div>
   );
-}
+};
 
 export default MyDiary;

@@ -13,24 +13,24 @@ const Login = () => {
   const date = new Date(today.setDate(today.getDate() + 1));
   const year = date.getFullYear();
   sessionStorage.setItem("year", year);
-  if(date.getMonth() + 1 <10) {
+  if (date.getMonth() + 1 < 10) {
     const month = `0${date.getMonth() + 1}`;
     sessionStorage.setItem("month", month);
-  }else{
+  } else {
     const month = date.getMonth() + 1;
     sessionStorage.setItem("month", month);
   }
-  if(date.getDate() <10) {
+  if (date.getDate() < 10) {
     const day = `0${date.getDate()}`;
     sessionStorage.setItem("day", day);
-  }else{
+  } else {
     const day = date.getDate();
     sessionStorage.setItem("day", day);
   }
 
   const gotoRegister = () => {
     navigate("/register");
-  }
+  };
 
   const handleLogin = async (event) => {
     // 로그인 처리 로직을 구현합니다.
@@ -52,12 +52,11 @@ const Login = () => {
 
     if (response.status === 200) {
       setLoginCheck(false);
-      
+
       // Store token in local storage
       sessionStorage.setItem("userId", result.response.body.userId);
       sessionStorage.setItem("nickname", result.response.body.nickname);
       sessionStorage.setItem("emotion", "0");
-      console.log(result.response.body.userId);
       navigate("/home");
     } else {
       setLoginCheck(true);
@@ -72,10 +71,14 @@ const Login = () => {
       <form className="LoginForm" onSubmit={handleLogin}>
         <input type="text" id="username" placeholder="ID" value={id} onChange={(e) => setId(e.target.value)} />
         <input type="password" id="password" placeholder="PW" value={password} onChange={(e) => setPassword(e.target.value)} />
-        {loginCheck && <label style={{ color: "red", marginTop:"-10px", marginLeft: "5px", fontSize:"12px" }}>ID 혹은 비밀번호가 틀렸습니다.</label>}
+        {loginCheck && <label style={{ color: "red", marginTop: "-10px", marginLeft: "5px", fontSize: "12px" }}>ID 혹은 비밀번호가 틀렸습니다.</label>}
       </form>
-      <button className="LoginButton" onClick={handleLogin}>{isLoading ? <div>Loading...</div> : <div>Login</div>}</button>
-      <div className="LoginRegister" onClick={gotoRegister} >회원가입</div>
+      <button className="LoginButton" onClick={handleLogin}>
+        {isLoading ? <div>Loading...</div> : <div>Login</div>}
+      </button>
+      <div className="LoginRegister" onClick={gotoRegister}>
+        회원가입
+      </div>
     </div>
   );
 };

@@ -13,7 +13,7 @@ const EditEmotion = () => {
         <EmotionButtons site={`editDiary/${param.id}`} />
       </div>
     </div>
-  );  
-}
+  );
+};
 
 export default EditEmotion;
