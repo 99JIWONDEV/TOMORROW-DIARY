@@ -1,10 +1,10 @@
 import "./WriteContentsInput.css";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { ContentsAtom } from "../recoil/ContentsAtom";
-import { useEffect } from "react";
+
 
 const WriteContentsInput = ({contents, setIsContents}) => {
-  const [inputContents, setInputContents] = useRecoilState(ContentsAtom);
+  const setInputContents = useSetRecoilState(ContentsAtom);
 
   const onChange = (e) => {
     setInputContents(e.target.value);

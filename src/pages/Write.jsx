@@ -3,7 +3,6 @@ import BackHeader from "../components/BackHeader";
 import WriteTitleInput from "../components/WriteTitleInput";
 import WriteContentsInput from "../components/WriteContentsInput";
 import "./Write.css";
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { TitleAtom } from "../recoil/TitleAtom";
 import { useRecoilValue } from "recoil";
@@ -11,6 +10,8 @@ import { ContentsAtom } from "../recoil/ContentsAtom";
 import { IsTitleAtom } from "../recoil/IsTitleAtom";
 import { IsContentsAtom } from "../recoil/IsContentsAtom";
 import { useRecoilState } from "recoil";
+
+
 
 const Write = () => {
   const title = useRecoilValue(TitleAtom);
@@ -47,16 +48,13 @@ const Write = () => {
       console.error("오류 발생:", error);
     }
   };
-
-  useEffect(() => {
-    console.log(isTitle, isContents);
-  }, [isTitle, isContents]);
+  
   return (
     <div className="Write">
       <BackHeader />
       <div className="WriteTitle">내일의 일기를 작성해주세요</div>
       <div className="WriteInputs">
-        <CustomCalendar />
+        <CustomCalendar/>
         <WriteTitleInput setIsTitle={setIsTitle} />
         <WriteContentsInput setIsContents={setIsContents} />
       </div>

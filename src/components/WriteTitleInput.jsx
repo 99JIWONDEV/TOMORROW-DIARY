@@ -1,11 +1,9 @@
 import "./WriteTitleInput.css";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { TitleAtom } from "../recoil/TitleAtom";
-import { useEffect } from "react";
-
 
 const WriteTitleInput = ({ title, setIsTitle }) => {
-  const [inputTitle, setInputTitle] = useRecoilState(TitleAtom);
+  const setInputTitle = useSetRecoilState(TitleAtom);
 
   const onChange = (e) => {
     setInputTitle(e.target.value);

@@ -13,15 +13,15 @@ const DiaryList = ({ id, date, title, emotion, contents }) => {
     if(emotion === "SMILE") {
       setEmotionIcon("😃");
     } else if (emotion === "SO_SO") {
-      setEmotionIcon("😒");
+      setEmotionIcon("😢");
     } else if (emotion === "NOT_BAD") {
-      setEmotionIcon("🥺");
-    } else if (emotion === "HAPPY") {
-      setEmotionIcon("😖");
-    } else if (emotion === "SAD") {
-      setEmotionIcon("😥");
-    } else if (emotion === "ANGRY") {
       setEmotionIcon("😡");
+    } else if (emotion === "HAPPY") {
+      setEmotionIcon("😰");
+    } else if (emotion === "SAD") {
+      setEmotionIcon("🤢");
+    } else if (emotion === "ANGRY") {
+      setEmotionIcon("🫢");
     }
   }, [emotion]);
 

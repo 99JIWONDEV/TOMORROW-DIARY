@@ -1,0 +1,49 @@
+.TomorrowEmotion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.TomorrowEmotionTitle {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.TomorrowEmotions {
+  margin-top: 50px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.TomorrowEmotionsRow {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.TomorrowEmotionEach {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 130px;
+  border-radius: 20px;
+  background-color: #14142F;
+}
+
+.EmotionIcon {
+  font-size: 50px;
+}
+
+.EmotionNum {
+  font-size: 16px;
+  font-weight: 600;
+}

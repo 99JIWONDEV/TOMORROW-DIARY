@@ -8,9 +8,6 @@ const Loading =()=>{
   const [number , setNumber] = useState(0)
   
   const navigate = useNavigate()
-  // setTimeout(()=>{
-  //   navigate("/myDiary")
-  // }, 5000)
   const nowEmotion = sessionStorage.getItem("emotion")
   const date = sessionStorage.getItem("year") + "-" + sessionStorage.getItem("month") + "-" + sessionStorage.getItem("day")
   console.log(date)

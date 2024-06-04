@@ -12,6 +12,7 @@ import EditDiary from './pages/EditDiary'
 import Login from './pages/Login'
 import BeforeLogin from './pages/BeforeLogin'
 import Register from './pages/Register'
+import TomorrowEmotion from './pages/TomorrowEmotion'
 
 function App() {
   // GET 요청
@@ -27,6 +28,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/choose" element={<Choose />} />
+        <Route path="/tomorrowEmotion" element={<TomorrowEmotion/>} />
         <Route path="/editEmotion/:id" element={<EditEmotion />} />
         <Route path="/write" element={<Write />} />
         <Route path="/editDiary/:id" element={<EditDiary />} />

@@ -1,22 +1,20 @@
-import { useState } from "react";
 import EmotionButton from "./EmotionButton";
 import "./EmotionButtons.css";
 
 const EmotionButtons = ({site}) => {
-  const [emotion, setEmotion] = useState() 
   return (
     <div className="EmotionButtons">
       <div className="EmotionButtonsRow">
-        <EmotionButton emotion="😃" site={site} setEmotion={setEmotion} />
-        <EmotionButton emotion="😒" site={site} setEmotion={setEmotion} />
+        <EmotionButton emotion="😃" name="기쁨" site={site}  />
+        <EmotionButton emotion="😢" name="슬픔"site={site}  />
       </div>
       <div className="EmotionButtonsRow">
-        <EmotionButton emotion="🥺" site={site} setEmotion={setEmotion}  />
-        <EmotionButton emotion="😖" site={site} setEmotion={setEmotion}  />
+        <EmotionButton emotion="😡" name="분노" site={site}   />
+        <EmotionButton emotion="😰" name="공포" site={site}   />
       </div>
       <div className="EmotionButtonsRow">
-        <EmotionButton emotion="😥" site={site} setEmotion={setEmotion} />
-        <EmotionButton emotion="😡" site={site} setEmotion={setEmotion} />
+        <EmotionButton emotion="🤢" name="혐오" site={site} />
+        <EmotionButton emotion="🫢" name="놀람" site={site} />
       </div>
     </div>
   );

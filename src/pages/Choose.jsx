@@ -2,6 +2,9 @@ import BackHeader from "../components/BackHeader";
 import EmotionButtons from "../components/EmotionButtons";
 import "./Choose.css";
 
+
+
+
 const Choose = () => {
   return (
     <div className="Choose">

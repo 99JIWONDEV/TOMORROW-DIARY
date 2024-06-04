@@ -40,15 +40,15 @@ const EditDiary = () => {
     if (emotionIcon === "SMILE") {
       setEmotionIcon("😃");
     } else if (emotionIcon === "SO_SO") {
-      setEmotionIcon("😒");
+      setEmotionIcon("😢");
     } else if (emotionIcon === "NOT_BAD") {
-      setEmotionIcon("🥺");
-    } else if (emotionIcon === "HAPPY") {
-      setEmotionIcon("😖");
-    } else if (emotionIcon === "SAD") {
-      setEmotionIcon("😥");
-    } else if (emotionIcon === "ANGRY") {
       setEmotionIcon("😡");
+    } else if (emotionIcon === "HAPPY") {
+      setEmotionIcon("😰");
+    } else if (emotionIcon === "SAD") {
+      setEmotionIcon("🤢");
+    } else if (emotionIcon === "ANGRY") {
+      setEmotionIcon("🫢");
     }
   }, [emotionIcon]);
   
