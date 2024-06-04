@@ -3,9 +3,10 @@ import HomeHeader from "../components/HomeHeader";
 import axios from "axios";
 import "./TomorrowEmotion.css";
 import { useState } from "react";
+import dayjs from 'dayjs'
 const TomorrowEmotion = () => {
-  const date = sessionStorage.getItem("year") + "-" + sessionStorage.getItem("month") + "-" + sessionStorage.getItem("day")
-  const title =  sessionStorage.getItem("month") + "월 " + sessionStorage.getItem("day") +"일 감정 통계"
+  const date = dayjs().add(1, 'day').format('YYYY-MM-DD')
+  const title = dayjs().add(1, 'day').format('MM월 DD일') + " 감정 통계"
   const [emotionNum, setEmotionNum] = useState()
   const [happy, setHappy] = useState()
   const [sad, setSad] = useState()

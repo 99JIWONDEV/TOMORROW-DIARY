@@ -21,7 +21,6 @@ const Write = () => {
   const [isContents, setIsContents] = useRecoilState(IsContentsAtom);
   const onClick = async (e) => {
     e.preventDefault();
-    console.log(`${sessionStorage.getItem("year")}-${sessionStorage.getItem("month").replaceAll(" ", "")}-${sessionStorage.getItem("day").replaceAll(" ", "")}`);
     try {
       const response = await fetch("/diarys/upload", {
         method: "POST",

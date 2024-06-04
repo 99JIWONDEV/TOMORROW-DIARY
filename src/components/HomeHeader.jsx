@@ -1,23 +1,16 @@
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import "./HomeHeader.css";
-import { useRecoilValue } from "recoil";
-import { TitleAtom } from "../recoil/TitleAtom";
-import { ContentsAtom } from "../recoil/ContentsAtom";
 
 const HomeHeader = () => {
-  const navigate = useNavigate()
-  const inputTitle = useRecoilValue(TitleAtom);
-  const inputContents = useRecoilValue(ContentsAtom);
+  const navigate = useNavigate();
   const gotoHome = () => {
-    navigate("/home")
-    console.log(inputTitle);
-    console.log(inputContents);
-  }
+    navigate("/home");
+  };
   return (
     <div className="HomeHeader">
-      <img src="../../public/homeIcon.svg" alt="" onClick={gotoHome}/>
+      <img src="../../public/homeIcon.svg" alt="" onClick={gotoHome} />
     </div>
-  )
+  );
 };
 
-export default HomeHeader;  
+export default HomeHeader;
