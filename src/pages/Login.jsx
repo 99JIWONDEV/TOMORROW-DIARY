@@ -9,6 +9,23 @@ const Login = () => {
   const [loginCheck, setLoginCheck] = useState(false); // 로그인 상태 체크
   const [isLoading, setIsLoading] = useState(false); // 로딩 상태 체크
   const navigate = useNavigate();
+  const date = new Date();
+  const year = date.getFullYear();
+  sessionStorage.setItem("year", year);
+  if(date.getMonth() + 1 <10) {
+    const month = `0${date.getMonth() + 1}`;
+    sessionStorage.setItem("month", month);
+  }else{
+    const month = date.getMonth() + 1;
+    sessionStorage.setItem("month", month);
+  }
+  if(date.getDate() <10) {
+    const day = `0${date.getDate()}`;
+    sessionStorage.setItem("day", day);
+  }else{
+    const day = date.getDate();
+    sessionStorage.setItem("day", day);
+  }
 
   const gotoRegister = () => {
     navigate("/register");

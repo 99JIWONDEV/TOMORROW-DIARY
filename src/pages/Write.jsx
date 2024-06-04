@@ -3,20 +3,21 @@ import BackHeader from "../components/BackHeader";
 import WriteTitleInput from "../components/WriteTitleInput";
 import WriteContentsInput from "../components/WriteContentsInput";
 import "./Write.css";
-import Button from "../components/Button";
-import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { TitleAtom } from "../recoil/TitleAtom";
 import { useRecoilValue } from "recoil";
 import { ContentsAtom } from "../recoil/ContentsAtom";
+import { IsTitleAtom } from "../recoil/IsTitleAtom";
+import { IsContentsAtom } from "../recoil/IsContentsAtom";
+import { useRecoilState } from "recoil";
 
 const Write = () => {
   const title = useRecoilValue(TitleAtom);
   const contents = useRecoilValue(ContentsAtom);
   const navigate = useNavigate();
-  const [isTitle, setIsTitle] = useState(false);
-  const [isContents, setIsContents] = useState(false);
+  const [isTitle, setIsTitle] = useRecoilState(IsTitleAtom);
+  const [isContents, setIsContents] = useRecoilState(IsContentsAtom);
   const onClick = async (e) => {
     e.preventDefault();
     console.log(`${sessionStorage.getItem("year")}-${sessionStorage.getItem("month").replaceAll(" ", "")}-${sessionStorage.getItem("day").replaceAll(" ", "")}`);
