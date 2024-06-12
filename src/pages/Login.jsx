@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Login.css";
 import BackHeader from "../components/BackHeader";
 import { useNavigate } from "react-router-dom";
+import { apiClient } from "../api/apiClient";
 
 const Login = () => {
   const [id, setId] = useState("");
@@ -42,6 +43,7 @@ const Login = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        'Access-Control-Allow-Origin': '*',
       },
       body: JSON.stringify({
         id: id,

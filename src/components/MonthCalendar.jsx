@@ -1,5 +1,6 @@
 import "./MonthCalendar.css";
 import { useState } from "react";
+import downIcon from "../../public/downIcon.svg";
 
 const MonthCalendar = ({ setMonth }) => {
   const [selectedMonth, setSelectedMonth] = useState("06"); // default month
@@ -31,7 +32,7 @@ const MonthCalendar = ({ setMonth }) => {
         <option value="12">12</option>
       </select>
       <span className="MonthCalendarIcon">
-        <img src="../../public/downIcon.svg" />
+        <img src={downIcon} />
       </span>
     </div>
   );

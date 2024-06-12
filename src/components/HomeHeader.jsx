@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./HomeHeader.css";
+import homeIcon from "../../public/homeIcon.svg";
 
 const HomeHeader = () => {
   const navigate = useNavigate();
@@ -8,7 +9,7 @@ const HomeHeader = () => {
   };
   return (
     <div className="HomeHeader">
-      <img src="../../public/homeIcon.svg" alt="" onClick={gotoHome} />
+      <img src={homeIcon} alt="" onClick={gotoHome} />
     </div>
   );
 };

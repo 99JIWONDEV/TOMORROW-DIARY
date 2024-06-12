@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    { "source": "/users/:path*", "destination": "https://dlsqja3436.codns.com/users/:path*" },
+    { "source": "/diarys/:path*", "destination": "https://dlsqja3436.codns.com/diarys/:path*" }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}

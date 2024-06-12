@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "./CustomCalendar.css";
 import { useState } from "react";
+import downIcon from "../../public/downIcon.svg";
 
 const CustomCalendar = () => {
   const today = new Date();
@@ -29,7 +30,7 @@ const CustomCalendar = () => {
         <option value={todayDate}>{todayDate}</option>
       </select>
       <span className="CustomCalendarIcon">
-        <img src="../../public/downIcon.svg" />
+        <img src={downIcon} />
       </span>
     </div>
   );

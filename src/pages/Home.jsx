@@ -1,6 +1,7 @@
 import Button from "../components/Button";
 import HomeImage from "../components/HomeImage";
 import { useNavigate } from "react-router-dom";
+import logoutIcon from "../../public/logoutIcon.svg";
 import "./Home.css";
 
 const Home = () => {
@@ -12,7 +13,7 @@ const Home = () => {
 
   return (
     <div className="Home">
-      <img className="HomeLogout" src="../../public/logoutIcon.svg" onClick={Logout} />
+      <img className="HomeLogout" src={logoutIcon} onClick={Logout} />
       <HomeImage />
       <div className="HomeButtons">
         <Button text="내일 일기 작성" site="choose" />

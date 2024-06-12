@@ -1,5 +1,6 @@
 import "./BackHeader.css";
 import { useNavigate } from "react-router-dom";
+import backIcon from "../../public/backIcon.svg";
 
 const BackHeader = () => {
   const navigate = useNavigate();
@@ -9,7 +10,7 @@ const BackHeader = () => {
 
   return (
     <div className="BackHeader">
-      <img src="../../public/backIcon.svg" alt="" onClick={gotoBack} />
+      <img src={backIcon} alt="" onClick={gotoBack} />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import "./YearCalendar.css";
+import downIcon from "../../public/downIcon.svg";
 const YearCalendar = () => {
   return (
     <div className="YearCalendar">
@@ -6,7 +7,7 @@ const YearCalendar = () => {
         <option>2024</option>
       </select>
       <span className="YearCalendarIcon">
-        <img src="../../public/downIcon.svg" />
+        <img src={downIcon} />
       </span>
     </div>
   );
