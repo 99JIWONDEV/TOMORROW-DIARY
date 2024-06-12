@@ -10,12 +10,12 @@ export default defineConfig({
   server: {
     proxy: {
       '/users': {
-        target: 'http://54.180.211.41',
+        target: 'https://dlsqja3436.codns.com',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/users/, '/users')
       },
       '/diarys': {
-        target: 'http://54.180.211.41',
+        target: 'https://dlsqja3436.codns.com',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/diarys/, '/diarys')
       }

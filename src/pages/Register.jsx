@@ -1,8 +1,7 @@
 import "./Register.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import BackHeader from "../components/BackHeader";
-import { useEffect } from "react";
 
 const Register = () => {
   const [id, setId] = useState("");
@@ -10,15 +9,17 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState(false);
+  const [idCheck, setIdCheck] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isNickname, setIsNickname] = useState(false);
-  const [isId, setIsId] = useState(false);
   const passwordRegEx = /^[A-Za-z0-9]{8,20}$/;
+  const idRegEx = /^[A-Za-z0-9]{4,20}$/;
 
   const navigate = useNavigate();
   const gotoLogin = () => {
     navigate("/login");
   };
+
   const onChangePassword = (e) => {
     setPassword(e.target.value);
   };
@@ -28,7 +29,7 @@ const Register = () => {
     } else {
       setPasswordCheck(true);
     }
-  });
+  }, [password]);
 
   const onChangeNickname = (e) => {
     setNickname(e.target.value);
@@ -45,10 +46,10 @@ const Register = () => {
     setId(e.target.value);
   };
   useEffect(() => {
-    if (id === "") {
-      setIsId(false);
+    if (id.match(idRegEx) === null) {
+      setIdCheck(false);
     } else {
-      setIsId(true);
+      setIdCheck(true);
     }
   }, [id]);
 
@@ -63,14 +64,14 @@ const Register = () => {
       return;
     }
 
-    if (!isId) {
-      alert("아이디를 입력해주세요.");
+    if (!idCheck) {
+      alert("아이디를 형식에 맞게 입력해주세요.");
       setIsLoading(false);
       return;
     }
 
     if (!passwordCheck) {
-      alert("비밀번호를 형식에 맞게 입력해주세요");
+      alert("비밀번호를 형식에 맞게 입력해주세요.");
       setIsLoading(false);
       return;
     }
@@ -122,6 +123,7 @@ const Register = () => {
       <form className="RegisterForm" onSubmit={handleSignup}>
         <input type="text" placeholder="Name" id="nickname" value={nickname} onChange={onChangeNickname} />
         <input type="text" placeholder="ID" id="id" value={id} onChange={onChangeId} />
+        {idCheck ? null : <div style={{ color: "red", fontSize: "12px" }}>아이디는 4~20자의 영문 대소문자와 숫자로만 입력해주세요.</div>}
         <input type="password" placeholder="PW" id="password" value={password} onChange={onChangePassword} />
         {passwordCheck ? null : <div style={{ color: "red", fontSize: "12px" }}>비밀번호는 8~20자의 영문 대소문자와 숫자로만 입력해주세요.</div>}
         <input type="password" placeholder="PW 확인" id="confirm-password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
